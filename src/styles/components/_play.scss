@@ -1,0 +1,91 @@
+.questions {
+  background-color: $off-white;
+  border-left: 5px solid $purple;
+  width: 80%;
+  margin: $lg auto 0 auto;
+  padding: $sm $md;
+
+  h2 {
+    text-align: center;
+  }
+
+  .lifeline-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .lifeline {
+    position: relative;
+    top: -3px;
+  }
+  h5 {
+    font-size: 1.2rem;
+    margin-bottom: $lg;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .options-container {
+    display: inline-block;
+    width: 50%;
+  }
+  .option {
+    background-color: $purple;
+    border-radius: $button-radius;
+    color: white;
+    cursor: pointer;
+    margin: $md auto;
+    padding: $normal;
+    transition: 0.3s linear all;
+    text-align: center;
+    width: 90%;
+  }
+
+  .option:hover {
+    background-color: darken($purple, 20%);
+  }
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto $sm auto;
+  padding: $md;
+  width: 80%;
+}
+
+.bottom-container button {
+  border: none;
+  color: $off-white;
+  cursor: pointer;
+  margin-right: $md;
+  padding: $xs $sm;
+  border-radius: 5px;
+}
+
+.bottom-container button:first-child {
+  background-color: darken($blue, 10%);
+  transition: 0.2s linear all;
+}
+
+.bottom-container button:first-child:hover {
+  background-color: darken($blue, 20%);
+}
+
+.bottom-container button:nth-child(2) {
+  background-color: darken($green, 10%);
+  transition: 0.2s linear all;
+}
+
+.bottom-container button:nth-child(2):hover {
+  background-color: darken($green, 20%);
+}
+
+.bottom-container button:nth-child(3) {
+  background-color: darken($red, 10%);
+  transition: 0.2s linear all;
+}
+
+.bottom-container button:nth-child(3):hover {
+  background-color: darken($red, 20%);
+}

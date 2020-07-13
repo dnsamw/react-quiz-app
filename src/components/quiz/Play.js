@@ -13,24 +13,27 @@ class Play extends Component {
           <title>දැනුම මිණුම - Play</title>
         </Helmet>
         <div className="questions">
+          <h2>Free Quiz Mode</h2>
           <div className="lifeline-container">
             <p>
               <span className="mdi mdi-set-center mdi-24px lifeline-icon">
-                2
+                <span className="lifeline">2</span>
               </span>
             </p>
 
             <p>
-              <span className="mdi mdi-lightbulb-on mdi-24px lifeline-icon">
-                5
-              </span>
+              <span className="mdi mdi-lightbulb-on mdi-24px lifeline-icon"></span>
+              <span className="lifeline">5</span>
             </p>
           </div>
 
           <div>
             <p>
-              <span>1 of 15</span>
-              2:20<span className="mdi mdi-clock-outline mdi-24px"></span>
+              <span className="left">1 of 15</span>
+              <span className="right">
+                2:20
+                <span className="mdi mdi-clock-outline mdi-24px"></span>
+              </span>
             </p>
           </div>
 
@@ -45,7 +48,7 @@ class Play extends Component {
           </div>
 
           <div className="bottom-container">
-            <button>Previous</button>
+            <button>Previos</button>
             <button>Next</button>
             <button>Quit</button>
           </div>
