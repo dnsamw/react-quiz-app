@@ -9,20 +9,28 @@ const Home = () => (
     </Helmet>
     <div id="home">
       <section>
-        <div>
-          <span className="mdi mdi-cube-outline mdi-48px">cube</span>
+        <div style={{ textAlign: "center" }}>
+          <span className="mdi mdi-nix mdi-spin mdi-96px cube">
+            {/* <img src={logo} alt="logo" /> */}
+          </span>
         </div>
-        <h1>Quiz App</h1>
-        <div className="plat-button-container">
+        <h1>දැනුම මිණුම</h1>
+        <div className="play-button-container">
           <ul>
             <li>
-              <Link to="/play/instructions">Play</Link>
+              <Link className="play-button" to="/play/instructions">
+                Play
+              </Link>
             </li>
           </ul>
         </div>
         <div className="auth-container">
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+          <Link className="auth-buttons" id="login-button" to="/login">
+            Login
+          </Link>
+          <Link className="auth-buttons" id="signup-button" to="/register">
+            Register
+          </Link>
         </div>
       </section>
     </div>
