@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Home = () => (
   <Fragment>
     <Helmet>
-      <title>Quiz App- Home</title>
+      <title>දැනුම මිණුම - Home</title>
     </Helmet>
     <div id="home">
       <section>
