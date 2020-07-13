@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Helmet from "react-helmet";
 
@@ -10,7 +10,7 @@ import options from "../../assets/img/options.jpg";
 const QuizInstructions = () => (
   <Fragment>
     <Helmet>
-      <title>Quiz - Instructions</title>
+      <title>දැනුම මිණුම - Instructions</title>
     </Helmet>
     <div className="container instructions">
       <h3>නීති රීති සහ ක්‍රීඩා කරන ආකාරය.</h3>
@@ -19,7 +19,7 @@ const QuizInstructions = () => (
         ආරම්භ කිරීමට පෙර පහත සඳහන් උපදෙස් සියල්ල කියවා අවබෝධ කරගැනීම අත්‍යාවශ්‍ය
         වේ.
       </h6>
-      <ol className className="browser-default" id="main-list">
+      <ol className="browser-default" id="main-list">
         <li>
           සෑම ප්‍රශ්ණ වටයක්ම බහුවරන ප්‍රශ්ණ 25 කින් සමන්විත වේ. එක් ප්‍රශ්ණයකට
           ලකුනු 4 ක් ලැබේ. ( 25x4 = 100).
@@ -76,7 +76,7 @@ const QuizInstructions = () => (
           <Link to="/">{"<< ආපසු හැරෙන්න"}</Link>
         </span>
         <span className="right">
-          <Link to="/play">{"ආරම්භ කරන්න >>"}</Link>
+          <Link to="/play/quiz">{"ආරම්භ කරන්න >>"}</Link>
         </span>
       </div>
     </div>

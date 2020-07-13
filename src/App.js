@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import QuizInstructions from "./components/quiz/QuizInstructions";
 import Home from "./components/Home";
+import QuizInstructions from "./components/quiz/QuizInstructions";
+import Play from "./components/quiz/Play";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         exact
         component={QuizInstructions}
       ></Route>
+      <Route path="/play/quiz" exact component={Play}></Route>
     </Router>
   );
 }
