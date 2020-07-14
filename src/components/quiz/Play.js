@@ -43,11 +43,12 @@ class Play extends Component {
   }
 
   displayQuestions = (
-    questions = this.state.questions,
+    questions,
     currentQuestion,
     nextQuestion,
     previousQuestion
   ) => {
+    console.log(questions[this.state.currentQuestionIndex]);
     let { currentQuestionIndex } = this.state;
     if (!isEmpty(this.state.questions)) {
       questions = this.state.questions;
@@ -78,12 +79,21 @@ class Play extends Component {
       classes: "toast-valid",
       displayLength: 1500,
     });
-    this.setState((previousState) => ({
-      score: previousState.score + 1,
-      correctAnswers: previousState.correctAnswers + 1,
-      currentQuestionIndex: previousState.currentQuestionIndex + 1,
-      numberOfAnsweredQuestions: previousState.numberOfAnsweredQuestions + 1,
-    }));
+    this.setState(
+      (prevState) => ({
+        score: prevState.score + 1,
+        correctAnswers: prevState.correctAnswers + 1,
+        currentQuestionIndex: prevState.currentQuestionIndex + 1,
+        numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1,
+      }),
+      () => {
+        this.displayQuestions(
+          this.state.questions,
+          this.state.nextQuestion,
+          this.state.previousQuestion
+        );
+      }
+    );
   };
 
   wrongAnswer = () => {
@@ -93,11 +103,20 @@ class Play extends Component {
       classes: "toast-invalid ",
       displayLength: 1500,
     });
-    this.setState((previousState) => ({
-      wrongAnswers: previousState.wrongAnswers + 1,
-      currentQuestionIndex: previousState.currentQuestionIndex + 1,
-      numberOfAnsweredQuestions: previousState.numberOfAnsweredQuestions + 1,
-    }));
+    this.setState(
+      (prevState) => ({
+        wrongAnswers: prevState.wrongAnswers + 1,
+        currentQuestionIndex: prevState.currentQuestionIndex + 1,
+        numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1,
+      }),
+      () => {
+        this.displayQuestions(
+          this.state.questions,
+          this.state.nextQuestion,
+          this.state.previousQuestion
+        );
+      }
+    );
   };
 
   render() {
