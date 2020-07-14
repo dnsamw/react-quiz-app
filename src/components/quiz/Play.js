@@ -26,6 +26,7 @@ class Play extends Component {
       hints: 5,
       fiftyFifty: 2,
       usedfiftyFifty: false,
+      previousRandomNumbers: [],
       time: {},
     };
   }
@@ -51,7 +52,7 @@ class Play extends Component {
     nextQuestion,
     previousQuestion
   ) => {
-    console.log(questions[this.state.currentQuestionIndex]);
+    // console.log(questions[this.state.currentQuestionIndex]);
     let { currentQuestionIndex } = this.state;
     if (!isEmpty(this.state.questions)) {
       questions = this.state.questions;
@@ -59,13 +60,19 @@ class Play extends Component {
       nextQuestion = questions[currentQuestionIndex + 1];
       previousQuestion = questions[currentQuestionIndex - 1];
       const answer = currentQuestion.answer;
-      this.setState({
-        currentQuestion,
-        nextQuestion,
-        previousQuestion,
-        numberOfQuestions: questions.length,
-        answer,
-      });
+      this.setState(
+        {
+          currentQuestion,
+          nextQuestion,
+          previousQuestion,
+          numberOfQuestions: questions.length,
+          answer,
+          previousRandomNumbers: [],
+        },
+        () => {
+          this.showOptions();
+        }
+      );
     }
   };
 
@@ -142,6 +149,54 @@ class Play extends Component {
     }
   };
 
+  showOptions = () => {
+    const options = Array.from(document.querySelectorAll(".option"));
+    options.forEach((option) => {
+      option.style.visibility = "visible";
+    });
+  };
+
+  handleHints = (e) => {
+    if (this.state.hints > 0) {
+      const options = Array.from(document.querySelectorAll(".option"));
+      // console.log(options);
+      let indexOfAnswer;
+
+      options.forEach((option, index) => {
+        if (
+          option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()
+        ) {
+          indexOfAnswer = index;
+        }
+      });
+
+      while (true) {
+        const randomNumber = Math.round(Math.random() * 3);
+        if (
+          randomNumber !== indexOfAnswer &&
+          !this.state.previousRandomNumbers.includes(randomNumber)
+        ) {
+          options.forEach((option, index) => {
+            if (index === randomNumber) {
+              option.style.visibility = "hidden";
+              this.setState((prevState) => ({
+                hints: prevState.hints - 1,
+                previousRandomNumbers: prevState.previousRandomNumbers.concat(
+                  randomNumber
+                ),
+              }));
+            }
+          });
+          break;
+        }
+        if (this.state.previousRandomNumbers.length >= 3) break;
+      }
+    }
+  };
+  handleFiftyFifty = (e) => {
+    console.log("5050 called");
+  };
+
   playButtonSound = () => {
     document.getElementById("button-sound").play();
   };
@@ -197,6 +252,8 @@ class Play extends Component {
     const {
       currentQuestion,
       currentQuestionIndex,
+      hints,
+      fiftyFifty,
       numberOfQuestions,
     } = this.state;
     return (
@@ -212,15 +269,16 @@ class Play extends Component {
         <div className="questions">
           <h2>Free Quiz Mode</h2>
           <div className="lifeline-container">
-            <p>
+            <p onClick={this.handleFiftyFifty}>
               <span className="mdi mdi-set-center mdi-24px lifeline-icon">
-                <span className="lifeline">2</span>
+                <span className="lifeline">{fiftyFifty}</span>
               </span>
             </p>
 
-            <p>
-              <span className="mdi mdi-lightbulb-on mdi-24px lifeline-icon"></span>
-              <span className="lifeline">5</span>
+            <p onClick={this.handleHints}>
+              <span className="mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon">
+                <span className="lifeline">{hints}</span>
+              </span>
             </p>
           </div>
 
