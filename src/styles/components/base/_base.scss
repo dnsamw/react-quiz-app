@@ -6,3 +6,15 @@
 body {
   font-family: $poppins;
 }
+
+.toast-invalid {
+  background-color: $error-text !important;
+  border-radius: 5px;
+  color: $off-white !important;
+}
+
+.toast-valid {
+  background-color: $success-text !important;
+  border-radius: 5px;
+  color: $off-white !important;
+}
