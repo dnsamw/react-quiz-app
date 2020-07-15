@@ -51,6 +51,10 @@ class Play extends Component {
     this.startTimer();
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   displayQuestions = (
     questions,
     currentQuestion,
@@ -149,6 +153,7 @@ class Play extends Component {
         break;
       case "quit-button":
         this.handleQuitButtonClick();
+        this.endGame(); //temporary
         break;
       default:
         break;
@@ -271,11 +276,15 @@ class Play extends Component {
         numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1,
       }),
       () => {
-        this.displayQuestions(
-          this.state.questions,
-          this.state.nextQuestion,
-          this.state.previousQuestion
-        );
+        if (this.state.nextQuestion === undefined) {
+          this.endGame();
+        } else {
+          this.displayQuestions(
+            this.state.questions,
+            this.state.nextQuestion,
+            this.state.previousQuestion
+          );
+        }
       }
     );
   };
@@ -294,11 +303,15 @@ class Play extends Component {
         numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1,
       }),
       () => {
-        this.displayQuestions(
-          this.state.questions,
-          this.state.nextQuestion,
-          this.state.previousQuestion
-        );
+        if (this.state.nextQuestion === undefined) {
+          this.endGame();
+        } else {
+          this.displayQuestions(
+            this.state.questions,
+            this.state.nextQuestion,
+            this.state.previousQuestion
+          );
+        }
       }
     );
   };
@@ -322,8 +335,7 @@ class Play extends Component {
             },
           },
           () => {
-            alert("Time's up!");
-            this.props.history.push("/");
+            this.endGame();
           }
         );
       } else {
@@ -362,6 +374,24 @@ class Play extends Component {
         nextButtonDisabled: false,
       });
     }
+  };
+
+  endGame = () => {
+    alert("quiz has ended!");
+    const { state } = this;
+    const playerStats = {
+      score: state.score,
+      numberOfQuestions: state.numberOfQuestions,
+      numberOfAnsweredQuestions: state.numberOfAnsweredQuestions,
+      correctAnswers: state.correctAnswers,
+      wrongAnswers: state.wrongAnswers,
+      fiftyFiftyUsed: 2 - state.fiftyFifty,
+      hintsUsed: 5 - state.hints,
+    };
+    console.log(playerStats);
+    setTimeout(() => {
+      this.props.history.push("/");
+    }, 1000);
   };
 
   render() {
