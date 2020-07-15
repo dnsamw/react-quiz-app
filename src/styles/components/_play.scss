@@ -99,3 +99,9 @@
 .bottom-container button:nth-child(3):hover {
   background-color: darken($red, 20%);
 }
+
+.disable {
+  background-color: #ccc !important;
+  opacity: 0.9 !important;
+  pointer-events: none !important;
+}

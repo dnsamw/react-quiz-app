@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Helmet from "react-helmet";
 import M from "materialize-css";
+import classnames from "classnames";
 
 import questions from "../../questions.json";
 import isEmpty from "../../utils/is-empty";
@@ -26,6 +27,8 @@ class Play extends Component {
       hints: 5,
       fiftyFifty: 2,
       usedfiftyFifty: false,
+      nextButtonDisabled: false,
+      previousButtonDisabled: true,
       previousRandomNumbers: [],
       time: {},
     };
@@ -73,6 +76,7 @@ class Play extends Component {
         },
         () => {
           this.showOptions();
+          this.handleDisableButton();
         }
       );
     }
@@ -300,7 +304,7 @@ class Play extends Component {
   };
 
   startTimer = () => {
-    const countDownTime = Date.now() + 30000;
+    const countDownTime = Date.now() + 180000; //total time
     this.interval = setInterval(() => {
       const now = new Date();
       const distance = countDownTime - now;
@@ -331,6 +335,33 @@ class Play extends Component {
         });
       }
     }, 1000);
+  };
+
+  handleDisableButton = () => {
+    if (
+      this.state.previousQuestion === undefined ||
+      this.state.currentQuestionIndex === 0
+    ) {
+      this.setState({
+        previousButtonDisabled: true,
+      });
+    } else {
+      this.setState({
+        previousButtonDisabled: false,
+      });
+    }
+    if (
+      this.state.nextQuestion === undefined ||
+      this.state.currentQuestionIndex + 1 === this.state.numberOfQuestions
+    ) {
+      this.setState({
+        nextButtonDisabled: true,
+      });
+    } else {
+      this.setState({
+        nextButtonDisabled: false,
+      });
+    }
   };
 
   render() {
@@ -400,10 +431,20 @@ class Play extends Component {
           </div>
 
           <div className="bottom-container">
-            <button id="previous-button" onClick={this.handleButtonClick}>
+            <button
+              className={this.state.previousButtonDisabled ? "disable" : ""} //using ternary op
+              id="previous-button"
+              onClick={this.handleButtonClick}
+            >
               Previos
             </button>
-            <button id="next-button" onClick={this.handleButtonClick}>
+            <button
+              className={classnames("", {
+                disable: this.state.nextButtonDisabled,
+              })} //using classnames module
+              id="next-button"
+              onClick={this.handleButtonClick}
+            >
               Next
             </button>
             <button id="quit-button" onClick={this.handleButtonClick}>
