@@ -1,82 +1,82 @@
 [
   {
-    "question": "question 1",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 3"
+    "question": "පහත සඳහන් සංයෝග වලින් පොටෑසියම් ප' මැංගනේට් හෙවත් කොන්ඩිස් වලට අදාල රසායනික සූත්‍රය නිවැරදිව දැක්වෙන්නේ..",
+    "optionA": "K2MnO4",
+    "optionB": "K2SO4",
+    "optionC": "KMnO4",
+    "optionD": "KMnO2",
+    "answer": "KMnO4"
   },
   {
-    "question": "question 2",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 4"
+    "question": "බෙරිලියම් මූලද්‍රව්‍යය ජලය සමග ප්‍රතික්‍රියා කිරීමේන් සාදන සංයෝගයේ රසායනික සූත්‍රය වනුයේ..",
+    "optionA": "BeH2O",
+    "optionB": "Be(OH)2",
+    "optionC": "Be(H2O)2",
+    "optionD": "BeOH2",
+    "answer": "Be(OH)2"
   },
   {
-    "question": "question 3",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 2"
+    "question": "පහත පිළිතුරු අතරින් ජෛව ගෝලයේ සංවිධාන මට්ටම දූරාවලිය නිවැරදි අනුපිළිවෙලට  දැක්වෙන්නේ..",
+    "optionA": "ඒකයිකයා, ගහනය, පරිසර පද්ධති, ප්‍රජාව, ජෛව ගෝලය",
+    "optionB": "ඒකයිකයා, ගහනය, ප්‍රජාව, ජෛව ගෝලය, පරිසර පද්ධති",
+    "optionC": "ඒකයිකයා, ප්‍රජාව ගහනය, ජෛව ගෝලය, පරිසර පද්ධති",
+    "optionD": "ඒකයිකයා, ගහනය, ප්‍රජාව, පරිසර පද්ධති, ජෛව ගෝලය",
+    "answer": "ඒකයිකයා, ගහනය, ප්‍රජාව, පරිසර පද්ධති, ජෛව ගෝලය"
   },
   {
-    "question": "question 4",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 1"
+    "question": "මේ අතුරින් හරිත ශාක තුල සිදුවන ප්‍රභාසංස්ලේශනය සඳහා අවශ්‍ය වන සාධකයක් නොවන්නේ..",
+    "optionA": "H2O",
+    "optionB": "C6H12O6",
+    "optionC": "CO2",
+    "optionD": "හරිතප්‍රද",
+    "answer": "C6H12O6"
   },
   {
-    "question": "question 5",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 3"
+    "question": "ප්‍රභාසංස්ලේශනය සඳහා CO2 වායුව අවශ්‍ය වන බව පේන්වීමට සැලසුම් කළ පරීක්ෂණයේදී CO2 වායුව අවශෝශනය කිරීමට එක් පොලිතින් මල්ලක් තුලට එකතු කරන්නේ..",
+    "optionA": "පොටෑසියම් හයිඩ්‍රොක්සයිඩ්",
+    "optionB": "සෝඩියම් ක්ලෝරයිඩ්",
+    "optionC": "පොටෑසියම් ප' මැංගනේට්",
+    "optionD": "ජලය",
+    "answer": "පොටෑසියම් හයිඩ්‍රොක්සයිඩ්"
   },
   {
-    "question": "question 6",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 4"
+    "question": "හරිත ශාක තුල අන්තර්ගත වන වර්ණකයක් වන්නේ..",
+    "optionA": "ක්ලෝරොෆෝම්",
+    "optionB": "ක්ලෝරොෆීල්",
+    "optionC": "ලා කොළ පාට",
+    "optionD": "තද කොළ පාට",
+    "answer": "ක්ලෝරොෆීල්"
   },
   {
-    "question": "question 7",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 2"
+    "question": "මානව රුධිරයේ අන්තර්ගත වන යකඩ අඩංගු වර්ණකය වනුයේ..",
+    "optionA": "රුධිර පට්ටිකා",
+    "optionB": "මයොග්ලොබීන්",
+    "optionC": "රතු රුධිර සෛල",
+    "optionD": "හිමොග්ලොබීන්",
+    "answer": "හිමොග්ලොබීන්"
   },
   {
-    "question": "question 8",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 1"
+    "question": "ආවර්තිතා වගුවේ ඛාණ්ඩ අංකයෙන් කියැවෙන්නේ එම ඛාණ්ඩයට අයත් මූලද්‍රව්‍ය වල..",
+    "optionA": "අවසාන කවචයේ ඇති ඉලෙක්ට්‍රෝන ගනන.",
+    "optionB": "න්‍යශ්ඨියේ ඇති ප්‍රෝටෝන ගනන.",
+    "optionC": "න්‍යශ්ඨියේ ඇති නියුට්‍රෝන ගනන.",
+    "optionD": "ශක්ති මට්ටම් ගනන.",
+    "answer": "අවසාන කවචයේ ඇති ඉලෙක්ට්‍රෝන ගනන."
   },
   {
-    "question": "question 9",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 4"
+    "question": "ආවර්තිතා වගුවේ ආවර්ත අංකයෙන් කියැවෙන්නේ එම ආවර්තයට අයත් මූලද්‍රව්‍ය වල..",
+    "optionA": "අවසාන කවචයේ ඇති ඉලෙක්ට්‍රෝන ගනන.",
+    "optionB": "න්‍යශ්ඨියේ ඇති ප්‍රෝටෝන ගනන.",
+    "optionC": "න්‍යශ්ඨියේ ඇති නියුට්‍රෝන ගනන.",
+    "optionD": "ශක්ති මට්ටම් ගනන.",
+    "answer": "ශක්ති මට්ටම් ගනන."
   },
   {
-    "question": "question 10",
-    "optionA": "Answer 1",
-    "optionB": "Answer 2",
-    "optionC": "Answer 3",
-    "optionD": "Answer 4",
-    "answer": "Answer 4"
+    "question": "ජීවයේ කුඩාම තැනුම් ඒකකය වන්නේ මේ අතුරින් කුමක්ද?",
+    "optionA": "කාබනික සංයෝග",
+    "optionB": "සෛලය",
+    "optionC": "අනුව",
+    "optionD": "පරමානුව",
+    "answer": "සෛලය"
   }
 ]

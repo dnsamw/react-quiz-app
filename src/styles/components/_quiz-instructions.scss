@@ -7,8 +7,12 @@ body {
 }
 
 .instructions {
+  background-color: #e4e4e4;
+  background-image: linear-gradient(135deg, #f0f2f3 0%, #f3f3f6 100%);
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
   border: 1px solid darken($off-white, 10%);
-  border-radius: 5px;
+  // border-radius: 5px;
   margin-top: $lg !important;
   margin-bottom: $lg !important;
   padding: $sm $lg;
@@ -38,6 +42,10 @@ body {
   img {
     width: 80%;
     height: 50%;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 

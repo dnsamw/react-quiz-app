@@ -154,6 +154,9 @@ class Play extends Component {
     options.forEach((option) => {
       option.style.visibility = "visible";
     });
+    this.setState({
+      usedfiftyFifty: false,
+    });
   };
 
   handleHints = (e) => {
@@ -195,6 +198,53 @@ class Play extends Component {
   };
   handleFiftyFifty = (e) => {
     console.log("5050 called");
+    if (this.state.fiftyFifty > 0 && this.state.usedfiftyFifty === false) {
+      const options = Array.from(document.querySelectorAll(".option"));
+      const randomNumbers = [];
+      let indexOfAnswer;
+      options.forEach((option, index) => {
+        if (
+          option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()
+        ) {
+          indexOfAnswer = index;
+        }
+      });
+      let count = 0;
+      do {
+        const randomNumber = Math.round(Math.random() * 3);
+        if (randomNumber !== indexOfAnswer) {
+          if (
+            randomNumbers.length < 2 &&
+            !randomNumbers.includes(randomNumber) &&
+            !randomNumbers.includes(indexOfAnswer)
+          ) {
+            randomNumbers.push(randomNumber);
+            count++;
+          } else {
+            while (true) {
+              const newRandomNumber = Math.round(Math.random() * 3);
+              if (
+                !randomNumbers.includes(newRandomNumber) &&
+                !randomNumbers.includes(indexOfAnswer)
+              ) {
+                randomNumbers.push(newRandomNumber);
+                count++;
+                break;
+              }
+            }
+          }
+        }
+      } while (count < 2);
+      options.forEach((option, index) => {
+        if (randomNumbers.includes(index)) {
+          option.style.visibility = "hidden";
+        }
+      });
+      this.setState((prevState) => ({
+        fiftyFifty: prevState.fiftyFifty - 1,
+        usedfiftyFifty: true,
+      }));
+    }
   };
 
   playButtonSound = () => {
