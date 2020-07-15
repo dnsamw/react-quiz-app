@@ -29,6 +29,7 @@ class Play extends Component {
       previousRandomNumbers: [],
       time: {},
     };
+    this.interval = null;
   }
 
   componentDidMount() {
@@ -44,6 +45,7 @@ class Play extends Component {
       nextQuestion,
       previousQuestion
     );
+    this.startTimer();
   }
 
   displayQuestions = (
@@ -297,6 +299,40 @@ class Play extends Component {
     );
   };
 
+  startTimer = () => {
+    const countDownTime = Date.now() + 30000;
+    this.interval = setInterval(() => {
+      const now = new Date();
+      const distance = countDownTime - now;
+
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0) {
+        clearInterval(this.interval);
+        this.setState(
+          {
+            time: {
+              minutes: 0,
+              seconds: 0,
+            },
+          },
+          () => {
+            alert("Time's up!");
+            this.props.history.push("/");
+          }
+        );
+      } else {
+        this.setState({
+          time: {
+            minutes,
+            seconds,
+          },
+        });
+      }
+    }, 1000);
+  };
+
   render() {
     //console.log(questions);
     const {
@@ -305,6 +341,7 @@ class Play extends Component {
       hints,
       fiftyFifty,
       numberOfQuestions,
+      time,
     } = this.state;
     return (
       <Fragment>
@@ -338,7 +375,7 @@ class Play extends Component {
                 {currentQuestionIndex + 1} of {numberOfQuestions}
               </span>
               <span className="right">
-                2:20
+                {time.minutes}:{time.seconds}
                 <span className="mdi mdi-clock-outline mdi-24px"></span>
               </span>
             </p>
