@@ -65,28 +65,32 @@ class QuizSummary extends Component {
             <div className="success-icon">
               <span className="mdi mdi-check-circle-outline "></span>
             </div>
-            <h1>Quiz has ended!</h1>
+            <h1>ප්‍රශ්න වටය අවසන්!</h1>
             <div className="container">
               <h4>{remark}</h4>
-              <h2>Your score : {this.state.score.toFixed(0)}&#37;</h2>
-              <span className="stat left">Total number of questions: </span>
+              <h2>ඔබේ ලකුණු මට්ටම : {this.state.score.toFixed(0)}&#37;</h2>
+              <span className="stat left">මුලු ප්‍රශ්ණ ගනන: </span>
               <span className="stat right">{state.numberOfQuestions}</span>
               <br></br>
-              <span className="stat left">Number of attempted questions: </span>
+              <span className="stat left">පිළිතුරු දුන් ප්‍රශ්ණ ගනන: </span>
               <span className="stat right">
                 {state.numberOfAnsweredQuestions}
               </span>
               <br></br>
-              <span className="stat left">Number of correct answers: </span>
+              <span className="stat left">
+                නිවැරදි පිළිතුරු දුන් ප්‍රශ්ණ ගනන:{" "}
+              </span>
               <span className="stat right">{state.correctAnswers}</span>
               <br></br>
-              <span className="stat left">Number wrong answers: </span>
+              <span className="stat left">
+                වැරදි පිළිතුරු දුන් ප්‍රශ්ණ ගනන:{" "}
+              </span>
               <span className="stat right">{state.wrongAnswers}</span>
               <br></br>
-              <span className="stat left">Hints Used: </span>
+              <span className="stat left">භාවිත කල ඉඟි ගනන: </span>
               <span className="stat right">{state.hintsUsed}</span>
               <br></br>
-              <span className="stat left">50-50 used: </span>
+              <span className="stat left">භාවිත කල 50/50 අවස්ථා ගනන: </span>
               <span className="stat right">{state.fiftyFiftyUsed}</span>
             </div>
             <section></section>
@@ -94,12 +98,12 @@ class QuizSummary extends Component {
               <ul>
                 <li>
                   <Link className="left" to="/">
-                    Back to home
+                    මුල් පිටුවට
                   </Link>
                 </li>
                 <li>
                   <Link className="right" to="/play/quiz">
-                    Play again
+                    නැවත් ක්‍රීඩා කරන්න
                   </Link>
                 </li>
               </ul>
@@ -111,14 +115,14 @@ class QuizSummary extends Component {
       stats = (
         <section>
           <h1 className="No stats available">
-            No Stats Available, Please take a quiz
+            ප්‍රතිඵල නැත!, කරුනාකර ප්‍රශ්ණ වටයක් අවසන් කරන්න.
           </h1>
           <ul>
             <li>
-              <Link to="/">Back to home</Link>
+              <Link to="/">මුල් පිටුවට</Link>
             </li>
             <li>
-              <Link to="/play/quiz">Take a</Link>
+              <Link to="/play/quiz">ක්‍රීඩා කරන්න</Link>
             </li>
           </ul>
         </section>
@@ -127,7 +131,7 @@ class QuizSummary extends Component {
     return (
       <Fragment>
         <Helmet>
-          <title>Quiz-Summary</title>
+          <title>දැනුම මිණුම - Summary</title>
         </Helmet>
         {stats}
       </Fragment>

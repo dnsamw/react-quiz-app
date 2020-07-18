@@ -418,7 +418,7 @@ class Play extends Component {
           <audio ref={this.buttonSound} src={buttonSound}></audio>
         </Fragment>
         <div className="questions">
-          <h2>Free Quiz Mode</h2>
+          <h2>දැනුම මිණුම.</h2>
           <div className="lifeline-container">
             <p onClick={this.handleFiftyFifty}>
               <span className="mdi mdi-set-center mdi-24px lifeline-icon">
@@ -469,7 +469,7 @@ class Play extends Component {
               id="previous-button"
               onClick={this.handleButtonClick}
             >
-              Previos
+              පෙර ප්‍රශ්නය
             </button>
             <button
               className={classnames("", {
@@ -478,10 +478,10 @@ class Play extends Component {
               id="next-button"
               onClick={this.handleButtonClick}
             >
-              Next
+              මිලඟ ප්‍රශ්නය
             </button>
             <button id="quit-button" onClick={this.handleButtonClick}>
-              Quit
+              ඉවත් වන්න
             </button>
           </div>
         </div>
